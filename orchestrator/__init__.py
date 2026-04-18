@@ -1,6 +1,7 @@
 import uuid
 
 from agents import Runner, SQLiteSession
+from requests import session
 
 from explainer.explainer_agent import ExplainerAgent
 from orchestrator.orchestrator_agent import OrchestratorAgent
@@ -12,7 +13,8 @@ if __name__ == '__main__':
     orchestrator = OrchestratorAgent(handoffs=[explainer, planner]).get_agent()
 
     #create a UUID
-    session_id = str(uuid.uuid4())
+    #session_id = str(uuid.uuid4())
+    session_id = "455e9bc3-d387-4b9f-a884-7fbee94ca789"
     session = SQLiteSession(
         session_id=session_id,
         db_path="finance_agent.db"
